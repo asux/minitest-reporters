@@ -176,7 +176,7 @@ module Minitest
           summary[:"#{result(test)}_count"] += 1
           summary[:assertion_count] += test.assertions
           summary[:test_count] += 1
-          summary[:time] += test.time
+          summary[:time] += test.time&.to_i
         end
         summary[:has_errors_or_failures] = (summary[:fail_count] + summary[:error_count]) > 0
         summary[:has_skipps] = summary[:skip_count] > 0
