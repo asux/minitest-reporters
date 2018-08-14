@@ -142,7 +142,7 @@ module Minitest
           result[:"#{result(test)}_count"] += 1
           result[:assertion_count] += test.assertions
           result[:test_count] += 1
-          result[:time] += test.time.try(:to_i)
+          result[:time] += test.time.to_f
         end
         result
       end
